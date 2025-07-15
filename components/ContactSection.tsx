@@ -46,7 +46,6 @@ export default function ContactSection({ data }: ContactSectionProps) {
             </div>
             <h3 className="text-xl font-bold text-white mb-4 text-center">E-posta</h3>
             <p className="text-gray-200 text-center">
-              <a href={`mailto:${data.email}`} className="hover:text-purple-300 transition-colors duration-300 break-all">
               <a href={`mailto:${data.email}`} className="hover:text-sky-300 transition-colors duration-600 break-all">
                 {data.email}
               </a>
@@ -64,7 +63,6 @@ export default function ContactSection({ data }: ContactSectionProps) {
             </div>
             <h3 className="text-xl font-bold text-white mb-4 text-center">Telefon</h3>
             <p className="text-gray-200 text-center">
-              <a href={`tel:${data.phone}`} className="hover:text-blue-300 transition-colors duration-300">
               <a href={`tel:${data.phone}`} className="hover:text-cyan-300 transition-colors duration-600">
                 {data.phone}
               </a>
@@ -121,7 +119,6 @@ export default function ContactSection({ data }: ContactSectionProps) {
               </a>
             </div>
 
-            {/* Social Proof */}
             <div className="mt-8 flex items-center justify-center space-x-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-white">⚡</div>
@@ -141,6 +138,4 @@ export default function ContactSection({ data }: ContactSectionProps) {
       </div>
     </section>
   );
-}
-  )
 }
