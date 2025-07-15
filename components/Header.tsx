@@ -26,13 +26,13 @@ export default function Header() {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = Math.min(currentScrollY / scrollHeight, 1);
     
-    setScrolled(currentScrollY > 20);
+    setScrolled(currentScrollY > 80);
     setScrollProgress(progress);
     
-    // Auto-hide header on scroll down, show on scroll up
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    // Çok yumuşak auto-hide logic
+    if (currentScrollY > lastScrollY && currentScrollY > 200) {
       setIsVisible(false);
-    } else {
+    } else if (currentScrollY < lastScrollY - 20) {
       setIsVisible(true);
     }
     setLastScrollY(currentScrollY);
@@ -61,181 +61,160 @@ export default function Header() {
 
   return (
     <>
-      {/* Backdrop blur overlay when menu is open */}
+      {/* Ultra soft backdrop */}
       {menuOpen && (
         <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden animate-fade-in"
+          className="fixed inset-0 bg-black/5 backdrop-blur-sm z-40 lg:hidden transition-all duration-1000 ease-out"
           onClick={closeMenu}
         />
       )}
 
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-out will-change-transform ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } ${
           scrolled
-            ? "bg-white/90 backdrop-blur-2xl shadow-2xl border-b border-sky-100/50"
+            ? "bg-white/85 backdrop-blur-2xl shadow-sm border-b border-sky-100/20"
             : "bg-white/70 backdrop-blur-xl"
         }`}
       >
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/5 via-cyan-500/5 to-blue-500/5 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
+        {/* Çok soft gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-50/10 via-cyan-50/10 to-blue-50/10 opacity-0 hover:opacity-100 transition-opacity duration-1500 ease-out"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Premium Logo */}
+            {/* Ultra soft Logo */}
             <Link href="/" className="flex items-center space-x-3 group relative">
               <div className="relative">
-                {/* Main logo container */}
-                <div className="w-14 h-14 bg-gradient-to-br from-sky-400 via-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-sky-500/40 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 relative overflow-hidden">
-                  {/* Animated background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-sky-300 via-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="w-11 h-11 bg-gradient-to-br from-sky-400/80 via-cyan-500/80 to-blue-600/80 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-sky-500/20 transition-all duration-1000 ease-out group-hover:scale-[1.02] group-hover:rotate-1 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-300/40 via-cyan-400/40 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
                   
-                  {/* Sparkle effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute top-2 left-2 w-1 h-1 bg-white rounded-full animate-ping"></div>
-                    <div className="absolute bottom-2 right-2 w-1 h-1 bg-white rounded-full animate-ping delay-300"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-1000 ease-out">
+                    <div className="absolute top-2 left-2 w-0.5 h-0.5 bg-white/60 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-2 right-2 w-0.5 h-0.5 bg-white/60 rounded-full animate-pulse delay-700"></div>
                   </div>
                   
-                  <Sparkles className="w-7 h-7 text-white relative z-10 group-hover:rotate-12 transition-transform duration-500" />
+                  <Sparkles className="w-5 h-5 text-white relative z-10 group-hover:rotate-3 transition-transform duration-1000 ease-out" />
                 </div>
                 
-                {/* Floating indicator */}
-                <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-cyan-400 to-sky-400 rounded-full animate-pulse shadow-lg">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-sky-300 rounded-full animate-ping"></div>
+                <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-gradient-to-r from-cyan-400/70 to-sky-400/70 rounded-full animate-pulse shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-300/50 to-sky-300/50 rounded-full animate-ping"></div>
                 </div>
                 
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-400 via-cyan-500 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-150"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-cyan-500/20 to-blue-600/20 rounded-lg blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-1000 ease-out scale-110"></div>
               </div>
               
               <div className="flex flex-col">
-                <span className="text-2xl font-black bg-gradient-to-r from-sky-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent group-hover:from-sky-500 group-hover:via-cyan-500 group-hover:to-blue-600 transition-all duration-500">
+                <span className="text-lg font-semibold bg-gradient-to-r from-sky-600/90 via-cyan-600/90 to-blue-700/90 bg-clip-text text-transparent group-hover:from-sky-500 group-hover:via-cyan-500 group-hover:to-blue-600 transition-all duration-1000 ease-out">
                   DigiCraft
                 </span>
-                <span className="text-xs text-gray-500 font-medium -mt-1 group-hover:text-sky-600 transition-colors duration-300">
+                <span className="text-xs text-gray-500/70 font-normal -mt-0.5 group-hover:text-sky-600/70 transition-colors duration-800 ease-out">
                   Digital Agency
                 </span>
               </div>
             </Link>
 
-            {/* Premium Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
+            {/* Ultra soft Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative px-5 py-3 text-gray-700 font-semibold hover:text-sky-600 transition-all duration-300 group overflow-hidden rounded-xl"
+                  className="relative px-4 py-2 text-gray-700/80 font-normal hover:text-sky-600 transition-all duration-800 ease-out group overflow-hidden rounded-lg"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {/* Background effects */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-sky-50 via-cyan-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100 rounded-xl"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-sky-100/50 via-cyan-100/50 to-blue-100/50 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-50/40 via-cyan-50/40 to-blue-50/40 opacity-0 group-hover:opacity-100 transition-all duration-800 ease-out scale-95 group-hover:scale-100 rounded-lg"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-100/20 via-cyan-100/20 to-blue-100/20 opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-out blur-sm"></div>
                   
-                  {/* Text */}
-                  <span className="relative z-10 group-hover:scale-105 transition-transform duration-300 inline-block">
+                  <span className="relative z-10 group-hover:scale-[1.01] transition-transform duration-800 ease-out inline-block">
                     {link.name}
                   </span>
                   
-                  {/* Animated underline */}
-                  <div className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500 group-hover:w-10 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-400 rounded-full"></div>
+                  <div className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-sky-500/60 via-cyan-500/60 to-blue-500/60 group-hover:w-6 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-1000 ease-out rounded-full"></div>
                   
-                  {/* Hover glow */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 via-cyan-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl rounded-xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-400/5 via-cyan-400/5 to-blue-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out blur-lg rounded-lg"></div>
                 </Link>
               ))}
             </nav>
 
-            {/* Premium CTA Button */}
+            {/* Ultra soft CTA Button */}
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="#iletisim"
-                className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-sky-500/50 transition-all duration-500 hover:scale-105 overflow-hidden"
+                className="group relative px-5 py-2.5 bg-gradient-to-r from-sky-500/85 via-cyan-500/85 to-blue-600/85 text-white font-medium rounded-lg shadow-sm hover:shadow-sky-500/25 transition-all duration-1000 ease-out hover:scale-[1.01] overflow-hidden"
               >
-                {/* Animated background layers */}
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-600 via-cyan-600 to-blue-700 opacity-0 group-active:opacity-100 transition-opacity duration-150"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-400/70 via-cyan-400/70 to-blue-500/70 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-600/90 via-cyan-600/90 to-blue-700/90 opacity-0 group-active:opacity-100 transition-opacity duration-300 ease-out"></div>
                 
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer"></div>
+                <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer-ultra-soft"></div>
                 
-                {/* Content */}
                 <div className="relative flex items-center space-x-2">
-                  <Zap className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                  <Zap className="w-4 h-4 group-hover:rotate-3 transition-transform duration-800 ease-out" />
                   <span>Teklif Al</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-800 ease-out" />
                 </div>
                 
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-xl scale-150"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-500/30 via-cyan-500/30 to-blue-600/30 opacity-0 group-hover:opacity-40 transition-opacity duration-1000 ease-out blur-lg scale-105"></div>
               </Link>
             </div>
 
-            {/* Premium Mobile Menu Button */}
+            {/* Ultra soft Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden relative w-12 h-12 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-xl hover:shadow-sky-500/50 transition-all duration-300 hover:scale-105 overflow-hidden group"
+              className="lg:hidden relative w-10 h-10 bg-gradient-to-r from-sky-500/85 to-cyan-500/85 rounded-lg flex items-center justify-center text-white shadow-sm hover:shadow-sky-500/25 transition-all duration-800 ease-out hover:scale-[1.01] overflow-hidden group"
             >
-              {/* Background animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-400/70 to-cyan-400/70 opacity-0 group-hover:opacity-100 transition-opacity duration-800 ease-out"></div>
               
-              {/* Icon with smooth transition */}
-              <div className="relative z-10 transition-transform duration-300">
+              <div className="relative z-10 transition-transform duration-800 ease-out">
                 {menuOpen ? (
-                  <X className="w-6 h-6 rotate-0 group-hover:rotate-90 transition-transform duration-300" />
+                  <X className="w-5 h-5 rotate-0 group-hover:rotate-90 transition-transform duration-800 ease-out" />
                 ) : (
-                  <Menu className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                  <Menu className="w-5 h-5 group-hover:scale-[1.02] transition-transform duration-800 ease-out" />
                 )}
               </div>
               
-              {/* Ripple effect */}
-              <div className="absolute inset-0 bg-white/20 rounded-full scale-0 group-active:scale-100 transition-transform duration-200"></div>
+              <div className="absolute inset-0 bg-white/8 rounded-full scale-0 group-active:scale-100 transition-transform duration-500 ease-out"></div>
             </button>
           </div>
 
-          {/* Premium Mobile Menu */}
+          {/* Ultra soft Mobile Menu */}
           <div
-            className={`lg:hidden overflow-hidden transition-all duration-700 ease-out ${
-              menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+            className={`lg:hidden overflow-hidden transition-all duration-1000 ease-out ${
+              menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="py-6 space-y-3">
-              <div className="bg-gradient-to-br from-sky-50/80 via-cyan-50/80 to-blue-50/80 backdrop-blur-xl rounded-3xl p-6 border border-sky-100/50 shadow-2xl">
+            <div className="py-3 space-y-2">
+              <div className="bg-white/60 backdrop-blur-xl rounded-xl p-3 border border-sky-100/30 shadow-sm">
                 {navLinks.map((link, index) => (
                   <Link
                     key={link.name}
                     href={link.href}
                     onClick={closeMenu}
-                    className="block px-6 py-4 text-gray-700 font-semibold hover:text-sky-600 hover:bg-white/60 rounded-2xl transition-all duration-300 group relative overflow-hidden"
+                    className="block px-3 py-2.5 text-gray-700/80 font-normal hover:text-sky-600 hover:bg-white/40 rounded-lg transition-all duration-800 ease-out group relative overflow-hidden"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    {/* Hover background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-sky-100/50 to-cyan-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-sky-100/30 to-cyan-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-800 ease-out rounded-lg"></div>
                     
-                    {/* Text */}
-                    <span className="relative z-10 group-hover:translate-x-2 transition-transform duration-300 inline-block">
+                    <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-800 ease-out inline-block">
                       {link.name}
                     </span>
                     
-                    {/* Arrow indicator */}
-                    <ArrowRight className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-sky-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-sky-500/50 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-800 ease-out" />
                   </Link>
                 ))}
                 
-                <div className="pt-6 mt-6 border-t border-sky-200/50">
+                <div className="pt-3 mt-3 border-t border-sky-200/20">
                   <Link
                     href="#iletisim"
                     onClick={closeMenu}
-                    className="flex items-center justify-center space-x-3 w-full px-6 py-4 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-sky-500/50 transition-all duration-300 hover:scale-105 group relative overflow-hidden"
+                    className="flex items-center justify-center space-x-2 w-full px-3 py-2.5 bg-gradient-to-r from-sky-500/85 via-cyan-500/85 to-blue-600/85 text-white font-medium rounded-lg shadow-sm hover:shadow-sky-500/25 transition-all duration-800 ease-out hover:scale-[1.01] group relative overflow-hidden"
                   >
-                    {/* Background animation */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-sky-400/70 via-cyan-400/70 to-blue-500/70 opacity-0 group-hover:opacity-100 transition-opacity duration-800 ease-out"></div>
                     
-                    {/* Content */}
                     <div className="relative z-10 flex items-center space-x-2">
-                      <Zap className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                      <Zap className="w-4 h-4 group-hover:rotate-3 transition-transform duration-800 ease-out" />
                       <span>Teklif Al</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-800 ease-out" />
                     </div>
                   </Link>
                 </div>
@@ -244,26 +223,25 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Premium Progress Bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-200/30 via-cyan-200/30 to-blue-200/30">
+        {/* Ultra soft Progress Bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-200/20 via-cyan-200/20 to-blue-200/20">
           <div 
-            className="h-full bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 transition-all duration-300 ease-out shadow-lg"
+            className="h-full bg-gradient-to-r from-sky-500/80 via-cyan-500/80 to-blue-600/80 transition-all duration-500 ease-out shadow-sm"
             style={{ 
               width: `${scrollProgress * 100}%`,
-              boxShadow: scrolled ? '0 0 20px rgba(14, 165, 233, 0.5)' : 'none'
+              boxShadow: scrolled ? '0 0 10px rgba(14, 165, 233, 0.3)' : 'none'
             }}
           >
-            {/* Animated shine effect */}
-            <div className="h-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+            <div className="h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer-ultra-soft"></div>
           </div>
         </div>
 
-        {/* Floating particles effect */}
+        {/* Soft floating particles */}
         {scrolled && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-4 left-1/4 w-1 h-1 bg-sky-400 rounded-full animate-float opacity-60"></div>
-            <div className="absolute top-6 right-1/3 w-1 h-1 bg-cyan-400 rounded-full animate-float delay-300 opacity-60"></div>
-            <div className="absolute top-8 left-2/3 w-1 h-1 bg-blue-400 rounded-full animate-float delay-500 opacity-60"></div>
+            <div className="absolute top-4 left-1/4 w-0.5 h-0.5 bg-sky-400/40 rounded-full animate-float opacity-30"></div>
+            <div className="absolute top-6 right-1/3 w-0.5 h-0.5 bg-cyan-400/40 rounded-full animate-float delay-500 opacity-30"></div>
+            <div className="absolute top-8 left-2/3 w-0.5 h-0.5 bg-blue-400/40 rounded-full animate-float delay-1000 opacity-30"></div>
           </div>
         )}
       </header>
