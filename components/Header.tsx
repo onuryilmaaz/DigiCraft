@@ -15,9 +15,17 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgressScaleX, setScrollProgressScaleX] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const scrollProgress = Math.min(
+        window.scrollY / (document.documentElement.scrollHeight - window.innerHeight),
+        1
+      );
+      setScrollProgressScaleX(scrollProgress);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -127,7 +135,7 @@ export default function Header() {
       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 opacity-0 transition-opacity duration-300" 
            style={{ 
              opacity: scrolled ? 1 : 0,
-             transform: `scaleX(${Math.min(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight), 1)})`,
+             transform: `scaleX(${scrollProgressScaleX})`,
              transformOrigin: 'left'
            }}>
       </div>
