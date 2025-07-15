@@ -69,6 +69,14 @@ export const companyData: CompanyData = {
       link: "#",
       description: "Hasta yönetim sistemi ile kullanıcı dostu sağlık platformu"
     }
+    {
+      id: "proje-5",
+      title: "E-Ticaret Platformu",
+      image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1",
+      imageAlt: "Modern e-ticaret web sitesi tasarımı",
+      link: "#",
+      description: "Kullanıcı dostu arayüz ve güvenli ödeme sistemi ile modern e-ticaret çözümü"
+    },
   ],
   about: {
     title: "DigiCraft Ajans Hakkında",
