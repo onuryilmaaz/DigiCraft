@@ -1,3 +1,4 @@
+import React from "react";
 import { ContactData } from '@/data/types';
 
 interface ContactSectionProps {
