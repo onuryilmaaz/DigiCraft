@@ -68,7 +68,7 @@ export const companyData: CompanyData = {
       imageAlt: "Sağlık uygulaması tasarımı",
       link: "#",
       description: "Hasta yönetim sistemi ile kullanıcı dostu sağlık platformu"
-    }
+    },
     {
       id: "proje-5",
       title: "E-Ticaret Platformu",
