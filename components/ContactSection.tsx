@@ -1,5 +1,6 @@
 import React from "react";
 import { ContactData } from '@/data/types';
+import { Mail } from 'lucide-react';
 
 interface ContactSectionProps {
   data: ContactData;
@@ -25,8 +26,8 @@ export default function ContactSection({ data }: ContactSectionProps) {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-scale">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-sm font-semibold rounded-full animate-pulse-glow">
-              📞 İletişim
+            <span className="px-4 py-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-sm font-semibold rounded-full animate-pulse-glow flex items-center">
+              <Mail className="w-4 h-4 mr-2" /> İletişim
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 animate-text-glow">

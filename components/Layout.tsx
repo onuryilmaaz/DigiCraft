@@ -7,10 +7,10 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen gpu-accelerated">
+    <div className="min-h-screen">
       <Header />
       <main className="relative">{children}</main>
-      <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-fuchsia-900 text-white py-16 relative overflow-hidden gpu-accelerated">
+      <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-fuchsia-900 text-white py-16 relative overflow-hidden">
         {/* Background Animation */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/15 to-pink-900/15"></div>

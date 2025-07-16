@@ -1,11 +1,5 @@
 import { Project } from "@/data/types";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 
 interface ProjectsSectionProps {
@@ -41,10 +35,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
         <Carousel opts={{ loop: true }} className="w-full max-w-6xl mx-auto">
           <CarouselContent className="-ml-4">
             {projects.map((project, index) => (
-              <CarouselItem
-                key={project.id}
-                className="md:basis-1/2 lg:basis-1/3 pl-4"
-              >
+              <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
                 <div
                   className={`group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-800 hover-lift animate-slide-in-up delay-${
                     (index + 1) * 100
@@ -52,8 +43,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 >
                   <div className="relative overflow-hidden h-64">
                     <Image
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={300}
                       src={project.image}
                       alt={project.imageAlt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-800 gpu-accelerated"
