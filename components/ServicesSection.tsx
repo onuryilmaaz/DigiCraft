@@ -1,4 +1,12 @@
 import { Service } from '@/data/types';
+import { Rocket, BarChart3, Paintbrush, Share2 } from 'lucide-react';
+
+const iconMap = {
+  Rocket: Rocket,
+  BarChart3: BarChart3,
+  Paintbrush: Paintbrush,
+  Share2: Share2,
+};
 
 interface ServicesSectionProps {
   services: Service[];
@@ -28,39 +36,42 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              className={`group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-800 border border-gray-100 hover:border-sky-200 hover-lift animate-slide-in-up delay-${(index + 1) * 100} gpu-accelerated`}
-            >
-              {/* Gradient Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-cyan-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-800"></div>
-              
-              <div className="relative text-center">
-                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300 animate-float">
-                  {service.icon}
-                </div>
+          {services.map((service, index) => {
+            const Icon = iconMap[service.icon as keyof typeof iconMap];
+            return (
+              <div
+                key={service.id}
+                className={`group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-800 border border-gray-100 hover:border-sky-200 hover-lift animate-slide-in-up delay-${(index + 1) * 100} gpu-accelerated`}
+              >
+                {/* Gradient Background on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-cyan-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-800"></div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-sky-600 transition-colors duration-600">
-                  {service.title}
-                </h3>
-                
-                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-600">
-                  {service.description}
-                </p>
+                <div className="relative text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-sky-100 to-cyan-100 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 animate-float">
+                    <Icon className="w-10 h-10 text-sky-600" />
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-sky-600 transition-colors duration-600">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-600">
+                    {service.description}
+                  </p>
 
-                {/* Hover Effect Button */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-600">
-                  <button className="px-6 py-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white rounded-full text-sm font-semibold hover:from-sky-600 hover:to-cyan-600 transition-all duration-600 gpu-accelerated">
-                    Detayları Gör
-                  </button>
+                  {/* Hover Effect Button */}
+                  <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-600">
+                    <button className="px-6 py-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white rounded-full text-sm font-semibold hover:from-sky-600 hover:to-cyan-600 transition-all duration-600 gpu-accelerated">
+                      Detayları Gör
+                    </button>
+                  </div>
                 </div>
+
+                {/* Corner Decoration */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-sky-400 to-cyan-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-600"></div>
               </div>
-
-              {/* Corner Decoration */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-sky-400 to-cyan-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-600"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}

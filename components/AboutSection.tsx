@@ -1,4 +1,5 @@
 import { AboutData } from '@/data/types';
+import { Users, Zap, Target, Award } from 'lucide-react';
 
 interface AboutSectionProps {
   data: AboutData;
@@ -18,8 +19,8 @@ export default function AboutSection({ data }: AboutSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8 animate-slide-in-left">
             <div className="inline-block">
-              <span className="px-4 py-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-sm font-semibold rounded-full">
-                👥 Hakkımızda
+              <span className="px-4 py-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-sm font-semibold rounded-full flex items-center">
+                <Users className="w-4 h-4 mr-2" /> Hakkımızda
               </span>
             </div>
             
@@ -62,19 +63,19 @@ export default function AboutSection({ data }: AboutSectionProps) {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">✨</span>
+                  <Zap className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-gray-700 font-medium">Yaratıcılık ve İnovasyon</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">🎯</span>
+                  <Target className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-gray-700 font-medium">Sonuç Odaklı Yaklaşım</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">🤝</span>
+                  <Award className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-gray-700 font-medium">Güvenilir Ortaklık</span>
               </div>

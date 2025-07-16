@@ -13,25 +13,25 @@ export const companyData: CompanyData = {
   services: [
     {
       id: "web-tasarim",
-      icon: "🚀",
+      icon: "Rocket",
       title: "Web Tasarım",
       description: "Kullanıcı deneyimini ön planda tutan, dönüşüm odaklı ve mobil uyumlu modern web siteleri tasarlıyoruz."
     },
     {
       id: "seo-optimizasyon",
-      icon: "📊",
+      icon: "BarChart3",
       title: "SEO Optimizasyonu",
       description: "Google'da üst sıralarda yer almanızı sağlayan kanıtlanmış SEO stratejileri ve teknik optimizasyon hizmetleri."
     },
     {
       id: "grafik-tasarim",
-      icon: "🎨",
+      icon: "Paintbrush",
       title: "Logo & Marka Kimliği",
       description: "Markanızın değerlerini yansıtan, akılda kalıcı logo tasarımları ve kapsamlı marka kimliği çözümleri."
     },
     {
       id: "sosyal-medya",
-      icon: "📱",
+      icon: "Share2",
       title: "Sosyal Medya Yönetimi",
       description: "Hedef kitlenizle güçlü bağlar kuran, etkileşim odaklı sosyal medya stratejileri ve içerik yönetimi."
     }

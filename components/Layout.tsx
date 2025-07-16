@@ -10,12 +10,12 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen gpu-accelerated">
       <Header />
       <main className="relative">{children}</main>
-      <footer className="bg-gradient-to-r from-gray-900 via-sky-900 to-gray-900 text-white py-16 relative overflow-hidden gpu-accelerated">
+      <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-fuchsia-900 text-white py-16 relative overflow-hidden gpu-accelerated">
         {/* Background Animation */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-sky-900/15 to-cyan-900/15"></div>
-          <div className="absolute top-10 left-10 w-32 h-32 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-float"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-float delay-300"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/15 to-pink-900/15"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-float"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-float delay-300"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,25 +33,25 @@ export default function Layout({ children }: LayoutProps) {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
+                  className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
                 >
                   <span className="text-white text-sm">f</span>
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
+                  className="w-10 h-10 bg-gradient-to-r from-pink-500 to-fuchsia-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
                 >
                   <span className="text-white text-sm">t</span>
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
+                  className="w-10 h-10 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
                 >
                   <span className="text-white text-sm">i</span>
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
+                  className="w-10 h-10 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-600 gpu-accelerated"
                 >
                   <span className="text-white text-sm">in</span>
                 </a>
@@ -67,7 +67,7 @@ export default function Layout({ children }: LayoutProps) {
                 <li>
                   <a
                     href="#hizmetler"
-                    className="text-gray-300 hover:text-sky-400 transition-colors duration-600"
+                    className="text-gray-300 hover:text-fuchsia-400 transition-colors duration-600"
                   >
                     Hizmetlerimiz
                   </a>
@@ -75,7 +75,7 @@ export default function Layout({ children }: LayoutProps) {
                 <li>
                   <a
                     href="#projeler"
-                    className="text-gray-300 hover:text-sky-400 transition-colors duration-600"
+                    className="text-gray-300 hover:text-fuchsia-400 transition-colors duration-600"
                   >
                     Projelerimiz
                   </a>
@@ -83,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
                 <li>
                   <a
                     href="#hakkimizda"
-                    className="text-gray-300 hover:text-sky-400 transition-colors duration-600"
+                    className="text-gray-300 hover:text-fuchsia-400 transition-colors duration-600"
                   >
                     Hakkımızda
                   </a>
@@ -91,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
                 <li>
                   <a
                     href="#iletisim"
-                    className="text-gray-300 hover:text-sky-400 transition-colors duration-600"
+                    className="text-gray-300 hover:text-fuchsia-400 transition-colors duration-600"
                   >
                     İletişim
                   </a>
@@ -131,19 +131,19 @@ export default function Layout({ children }: LayoutProps) {
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-sky-400 text-sm transition-colors duration-600"
+                  className="text-gray-400 hover:text-fuchsia-400 text-sm transition-colors duration-600"
                 >
                   Gizlilik Politikası
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-sky-400 text-sm transition-colors duration-600"
+                  className="text-gray-400 hover:text-fuchsia-400 text-sm transition-colors duration-600"
                 >
                   Kullanım Şartları
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-sky-400 text-sm transition-colors duration-600"
+                  className="text-gray-400 hover:text-fuchsia-400 text-sm transition-colors duration-600"
                 >
                   Çerez Politikası
                 </a>
