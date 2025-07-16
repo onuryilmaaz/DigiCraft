@@ -1,93 +1,93 @@
 import { CompanyData } from './types';
 
 export const companyData: CompanyData = {
-  name: "DigiCraft Ajans",
+  name: "SaasCraft",
   hero: {
-    headline: "Dijital Dünyanızı Dönüştürün",
-    subtitle: "Modern web tasarımları, SEO optimizasyonu ve yaratıcı marka kimliği çözümleriyle işletmenizi dijital dünyada öne çıkarıyoruz. Hayallerinizi gerçeğe dönüştürmeye hazır mısınız?",
-    ctaText: "Hemen Başlayın",
+    headline: "Premium SaaS Çözümleri",
+    subtitle: "İşletmenizi dijital dönüşümde öne çıkaracak premium SaaS uygulamaları geliştiriyoruz. Bulut tabanlı, ölçeklenebilir ve güvenli çözümlerle rekabet avantajı kazanın.",
+    ctaText: "Ücretsiz Demo",
     ctaLink: "#iletisim",
     heroImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    heroImageAlt: "Dijital projeler üzerinde çalışan yaratıcı ekip"
+    heroImageAlt: "Premium SaaS dashboard ve analitik araçları"
   },
   services: [
     {
-      id: "web-tasarim",
+      id: "saas-development",
       icon: "Rocket",
-      title: "Web Tasarım",
-      description: "Kullanıcı deneyimini ön planda tutan, dönüşüm odaklı ve mobil uyumlu modern web siteleri tasarlıyoruz."
+      title: "SaaS Development",
+      description: "Ölçeklenebilir, güvenli ve kullanıcı dostu SaaS uygulamaları geliştiriyoruz. Modern teknolojiler ile enterprise seviyede çözümler."
     },
     {
-      id: "seo-optimizasyon",
+      id: "cloud-analytics",
       icon: "BarChart3",
-      title: "SEO Optimizasyonu",
-      description: "Google'da üst sıralarda yer almanızı sağlayan kanıtlanmış SEO stratejileri ve teknik optimizasyon hizmetleri."
+      title: "Cloud Analytics",
+      description: "Gerçek zamanlı veri analizi ve raporlama araçları. İş zekası çözümleri ile verilerinizi değerli içgörülere dönüştürün."
     },
     {
-      id: "grafik-tasarim",
+      id: "api-integration",
       icon: "Paintbrush",
-      title: "Logo & Marka Kimliği",
-      description: "Markanızın değerlerini yansıtan, akılda kalıcı logo tasarımları ve kapsamlı marka kimliği çözümleri."
+      title: "API Integration",
+      description: "Mevcut sistemlerinizi modern API'ler ile entegre ederek iş süreçlerinizi otomatikleştirin ve verimliliği artırın."
     },
     {
-      id: "sosyal-medya",
+      id: "support-maintenance",
       icon: "Share2",
-      title: "Sosyal Medya Yönetimi",
-      description: "Hedef kitlenizle güçlü bağlar kuran, etkileşim odaklı sosyal medya stratejileri ve içerik yönetimi."
+      title: "24/7 Support",
+      description: "Kesintisiz teknik destek ve sistem bakımı. Proaktif izleme ile sorunları önceden tespit edip çözüyoruz."
     }
   ],
   projects: [
     {
       id: "proje-1",
-      title: "E-Ticaret Platformu",
+      title: "Enterprise CRM Platform",
       image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1",
-      imageAlt: "Modern e-ticaret web sitesi tasarımı",
+      imageAlt: "Modern CRM dashboard tasarımı",
       link: "#",
-      description: "Kullanıcı dostu arayüz ve güvenli ödeme sistemi ile modern e-ticaret çözümü"
+      description: "Satış süreçlerini optimize eden, AI destekli müşteri yönetim platformu"
     },
     {
       id: "proje-2",
-      title: "Restoran Web Sitesi",
+      title: "Cloud Analytics Suite",
       image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1",
-      imageAlt: "Restoran web sitesi tasarımı",
+      imageAlt: "Veri analizi dashboard tasarımı",
       link: "#",
-      description: "Online rezervasyon sistemi ile şık restoran web sitesi tasarımı"
+      description: "Gerçek zamanlı veri görselleştirme ve iş zekası çözümleri"
     },
     {
       id: "proje-3",
-      title: "Kurumsal Portal",
+      title: "Project Management SaaS",
       image: "https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1",
-      imageAlt: "Kurumsal web sitesi tasarımı",
+      imageAlt: "Proje yönetim platformu tasarımı",
       link: "#",
-      description: "Gelişmiş özellikler ve yönetim paneli ile profesyonel kurumsal web sitesi"
+      description: "Ekip işbirliği ve proje takibi için gelişmiş yönetim platformu"
     },
     {
       id: "proje-4",
-      title: "Sağlık Uygulaması",
+      title: "E-commerce Analytics",
       image: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1",
-      imageAlt: "Sağlık uygulaması tasarımı",
+      imageAlt: "E-ticaret analitik platformu",
       link: "#",
-      description: "Hasta yönetim sistemi ile kullanıcı dostu sağlık platformu"
+      description: "Satış performansı ve müşteri davranış analizi platformu"
     },
     {
       id: "proje-5",
-      title: "E-Ticaret Platformu",
+      title: "HR Management System",
       image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1",
-      imageAlt: "Modern e-ticaret web sitesi tasarımı",
+      imageAlt: "İnsan kaynakları yönetim sistemi",
       link: "#",
-      description: "Kullanıcı dostu arayüz ve güvenli ödeme sistemi ile modern e-ticaret çözümü"
+      description: "Personel yönetimi ve performans takibi için kapsamlı HR çözümü"
     },
   ],
   about: {
-    title: "DigiCraft Ajans Hakkında",
-    content: "8 yılı aşkın deneyimimizle, işletmelerin dijital dönüşüm yolculuğunda güvenilir partneri oluyoruz. Yaratıcı tasarımcılar, deneyimli geliştiriciler ve dijital strateji uzmanlarından oluşan ekibimiz, müşteri beklentilerini aşan sonuçlar üretmek için işbirliği içinde çalışır. İnovatif tasarım anlayışımızı en son teknolojilerle birleştirerek, etkili dijital deneyimler yaratıyoruz.",
+    title: "SaasCraft Hakkında",
+    content: "10 yılı aşkın deneyimimizle, işletmelerin dijital dönüşüm yolculuğunda güvenilir teknoloji partneri oluyoruz. Uzman yazılım geliştiriciler, sistem mimarları ve UX tasarımcılarından oluşan ekibimiz, enterprise seviyede SaaS çözümleri geliştirmek için en son teknolojileri kullanır. Müşteri odaklı yaklaşımımızla, her projeyi benzersiz ihtiyaçlara göre özelleştiriyor ve uzun vadeli başarı için sürdürülebilir çözümler sunuyoruz.",
     image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1",
-    imageAlt: "Birlikte çalışan ekibimiz"
+    imageAlt: "SaaS geliştirme ekibimiz"
   },
   contact: {
     title: "İletişime Geçin",
-    email: "merhaba@digicraftajans.com",
-    phone: "+90 (212) 555-0123",
+    email: "hello@saascraft.com",
+    phone: "+90 (212) 555-0199",
     address: "Maslak Mahallesi, Teknoloji Caddesi No:42, Sarıyer/İstanbul"
   }
 };
