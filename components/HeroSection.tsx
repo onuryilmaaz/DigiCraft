@@ -1,3 +1,5 @@
+"use client";
+
 import { HeroData } from "@/data/types";
 import { ArrowRight, Play, Star } from "lucide-react";
 
